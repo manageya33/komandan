@@ -33,7 +33,7 @@ def spam_allowed():
     return SPAM_COUNT[0] < 50
 
 
-@Client.on_message(filters.me & filters.command(["dspam", "delayspam"], cmd))
+@Client.on_message(filters.me & filters.command(["dspam", "komandan"], cmd))
 async def delayspam(client: Client, message: Message):
     if message.chat.id in BLACKLIST_CHAT:
         return await edit_or_reply(
